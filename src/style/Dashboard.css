@@ -1,0 +1,67 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: var(--thefont);
+}
+.dashboard{
+  width: 1100px;
+  display: grid;
+  grid-template-areas:
+    'profileSection cardWork cardPlay cardStudy'
+    'profileSection cardExercise cardSocial cardSelf';  
+    gap: 25px;
+}
+.profileSection{
+  grid-area: profileSection;
+  display: flex;
+  justify-content: center;
+}
+.cardWork{
+grid-area: cardWork;
+}
+.cardPlay{
+grid-area: cardPlay;
+}
+.cardStudy{
+grid-area: cardStudy;
+}
+.cardExercise{
+grid-area: cardExercise;
+}
+.cardSocial{
+grid-area: cardSocial;
+}
+.cardSelf{
+grid-area: cardSelf;
+}
+
+
+@media screen and (max-width: 1105px) {
+  .dashboard{
+    width: 800px;
+    grid-template-areas:
+      'profileSection cardWork cardStudy' 
+      'profileSection cardPlay cardExercise'  
+      'profileSection cardSocial cardSelf'; 
+      gap: 25px;
+  }
+}
+
+@media screen and (max-width: 805px) {
+  .dashboard{
+    width: 450px;
+    height: 100vh;
+    grid-template-areas:
+      'profileSection'
+       'cardWork' 
+       'cardPlay' 
+       'cardStudy' 
+       'cardExercise'  
+      'cardSocial' 
+      'cardSelf'; 
+      gap: 25px;
+  }
+}
+

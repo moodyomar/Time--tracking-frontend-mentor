@@ -1,0 +1,164 @@
+.frontCard,.profileCardBack,
+.profileCardFront{
+width: 250px;
+border-radius: 15px;
+}
+.backCard{
+height: 240px;
+border-radius: 18px;
+padding: 0;
+display: flex;
+align-items: flex-end;
+}
+
+.frontCard{
+padding: 20px;
+height: 200px;
+background-color: var(--Dark-blue);
+/* opacity: 0; */
+transition: .2s all ease-out;
+}
+.frontCard:hover{
+background-color: var(--Desaturated-blue);
+cursor: pointer;
+transition: .2s all ease-in;
+}
+.d-flex{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.cardTitle{
+font-size: 18px;
+}
+.options{
+font-size: 25px;
+opacity: 0.5;
+align-self: flex-start;
+}
+.options:hover{
+opacity: 1;
+}
+.hours{
+font-size: 50px;
+font-weight: 300;
+margin-top: 25px;
+}
+.date,.reportsFor{
+font-size: 15px;
+margin-top: 15px;
+color: var(--Pale-Blue);
+}
+
+
+/* Profile Card */
+.flex-col{
+  flex-direction: column;
+}
+.profileCardBack{
+  background-color: var(--Dark-blue);
+  height: 500px;
+}
+.profileCardFront{
+  background-color: var(--Blue);
+  padding: 20px;
+}
+
+.profilePicture{
+  background-image: url('../assests//image-jeremy.png');
+  width: 80px;
+  height: 80px;
+  margin-left: 10px;
+  background-size: contain;
+  border: solid 3px #fff;
+  border-radius: 50px;
+  margin-bottom: 40px;
+}
+
+.profileName{
+  font-weight: 300;
+  font-size: 45px;
+  margin-bottom: 50px;
+}
+.timePeriod{
+  margin-top: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.timePeriod p{
+  margin-bottom: 20px;
+}
+.timePeriod p:nth-child(odd){
+  color: var(--Pale-Blue);
+}
+.timePeriod p:hover{
+color: #fff;
+cursor: pointer;
+}
+
+@media screen and (max-width: 1105px) {
+  .profileCardBack{
+    height: 800px;
+  }
+  .timePeriod p{
+    margin-top: 30px;
+  }
+  .profileCardFront{
+    height: 500px;
+  }
+  .profileName{
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 805px) {
+  .flex-col,.timePeriod{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .timePeriod{
+    justify-content: space-around;
+    margin-top: 0px;
+    padding: 0;
+  }
+  .profileSection{
+    margin-top: 50px;
+  }
+  .profileCardBack{
+    height: 200px;
+  }
+  .profileCardFront{
+    height: 150px;
+  }
+  .profileName{
+    margin-top: 10px;
+    font-size: 30px;
+  }
+  .timePeriod p{
+    margin-top: 15px;
+  }
+  .frontCard,.profileCardBack,
+.profileCardFront{
+width: 370px;
+border-radius: 15px;
+}
+.frontCard{
+  height: 150px;
+}
+.backCard{
+  height: 190px;
+}
+.hours{
+  margin-top: 0px;
+  font-size: 35px;
+  }
+  .col{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+  }
+}
