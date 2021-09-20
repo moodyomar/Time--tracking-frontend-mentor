@@ -33,7 +33,9 @@ justify-content: center;
 align-items: center;
 background: var(--Very-dark-blue);
 }
-
+body{
+  background: var(--Very-dark-blue);
+}
 
 @media screen and (min-width: 1105px) {
   .App{

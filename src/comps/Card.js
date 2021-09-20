@@ -1,12 +1,13 @@
 import React from 'react';
 import '../style/Card.css'
 
-const Card = ({i,ca:{title,timeframes:{weekly,daily}}}) => { 
+const Card = ({i,ca:{title,timeframes:{weekly}}}) => { 
+
+let cat = title.split(' ').join('')
 
 return(
 <div className={`card${title}`} style={{display:'grid',placeItems:'center'}}>
-<div className='backCard' style={{backgroundColor:`var(--${title.split(' ').join('')})`}}>
-  <div className="svg"></div>
+<div className={`backCard ${cat}-icon`} style={{backgroundColor:`var(--${cat})`}}>
 <div className="frontCard">
   <div className="d-flex">
     <div className="cardTitle">{title}</div>

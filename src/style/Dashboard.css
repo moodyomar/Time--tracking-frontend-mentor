@@ -51,6 +51,7 @@ grid-area: cardSelf;
 
 @media screen and (max-width: 805px) {
   .dashboard{
+    padding: 40px;
     width: 450px;
     height: 100vh;
     grid-template-areas:

@@ -8,7 +8,7 @@ import ProfileCard from './ProfileCard';
 const Dashboard = () => { 
 
 const cards = card.map((ca,i) => (
-  <Card ca={ca}  />
+  <Card key={i} ca={ca}  />
 ))
 
 return(
