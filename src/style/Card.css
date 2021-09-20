@@ -15,23 +15,23 @@ background-position: 155px -8px;
 z-index: 10;
 }
 
-.Work-icon{
-  background-image: url('../assests/svgs/icon-Work.svg');
+.work-icon{
+  background-image: url('../assests/svgs/icon-work.svg');
 }
-.Play-icon{
-  background-image: url('../assests/svgs/icon-Play.svg');
+.play-icon{
+  background-image: url('../assests/svgs/icon-play.svg');
 }
-.Social-icon{
-  background-image: url('../assests/svgs/icon-Social.svg');
+.social-icon{
+  background-image: url('../assests/svgs/icon-social.svg');
 }
-.Study-icon{
-  background-image: url('../assests/svgs/icon-Study.svg');
+.study-icon{
+  background-image: url('../assests/svgs/icon-study.svg');
 }
-.Exercise-icon{
-  background-image: url('../assests/svgs/icon-Exercise.svg');
+.exercise-icon{
+  background-image: url('../assests/svgs/icon-exercise.svg');
 }
-.SelfCare-icon{
-  background-image: url('../assests/svgs/icon-SelfCare.svg');
+.selfcare-icon{
+  background-image: url('../assests/svgs/icon-selfcare.svg');
 }
 
 .frontCard{
@@ -88,7 +88,7 @@ color: var(--Pale-Blue);
 }
 
 .profilePicture{
-  background-image: url('../assests//image-jeremy.png');
+  background-image: url('../assests/image-jeremy.png');
   width: 80px;
   height: 80px;
   margin-left: 10px;

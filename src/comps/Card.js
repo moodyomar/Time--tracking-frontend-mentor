@@ -4,10 +4,12 @@ import '../style/Card.css'
 const Card = ({i,ca:{title,timeframes:{weekly}}}) => { 
 
 let cat = title.split(' ').join('')
+console.log(cat.toLowerCase());
+
 
 return(
 <div className={`card${title}`} style={{display:'grid',placeItems:'center'}}>
-<div className={`backCard ${cat}-icon`} style={{backgroundColor:`var(--${cat})`}}>
+<div className={`backCard ${cat.toLowerCase()}-icon`} style={{backgroundColor:`var(--${cat})`}}>
 <div className="frontCard">
   <div className="d-flex">
     <div className="cardTitle">{title}</div>
