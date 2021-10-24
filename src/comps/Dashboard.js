@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { AiFillPlusCircle,AiFillClockCircle
+  ,AiFillCheckCircle,AiFillUpCircle,AiFillQuestionCircle } from 'react-icons/ai';
 import Card from './Card';
 import data from '../assests/data.json'
 import '../style/Dashboard.css'
@@ -25,9 +27,23 @@ return(
 <ProfileCard setCategory={setCategory} category={category} />
 </div>
   {cards}
+  <div className="bottomBar mobileOnly">
+<div className="wrapper">
+<div className="icon" onClick={''} ><AiFillQuestionCircle size={45}/></div>
+<div className="icon" onClick={''} ><AiFillClockCircle size={60}/></div>
+<div className="icon" onClick={''} ><AiFillPlusCircle size={75}/></div>
+<div className="icon" onClick={''} ><AiFillCheckCircle size={60}/></div>
+<div className="icon" onClick={() => window.scrollTo(0,0)} ><AiFillUpCircle size={45}/></div>
+</div>
+  </div>
 </div>
 
 )
+}
+
+const shadow = {
+  boxShadow:  '-1px -3px 10px 6px rgba(0,0,0,0.3)'
+
 }
 
 export default Dashboard

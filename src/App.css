@@ -32,17 +32,24 @@ display: flex;
 justify-content: center;
 align-items: center;
 background: var(--Very-dark-blue);
+font-family: var(--thefont);
 }
 body{
   background: var(--Very-dark-blue);
 }
-
+.mobileOnly{
+  display: none;
+}
 @media screen and (min-width: 1105px) {
   .App{
     position: fixed;
   }
 }
-
+@media screen and (max-width: 805px) {
+  .mobileOnly{
+    display: block;
+  }
+}
 .d-flex{
   display: flex;
 }

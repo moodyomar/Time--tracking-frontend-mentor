@@ -6,8 +6,6 @@ const Card = ({i,ca:{title,timeframes},category}) => {
 let cat = title.split(' ').join('')
 // console.log(cat.toLowerCase());
 
-console.log(timeframes[category]);
-
 
 return(
 <div className={`card${title}`} style={{display:'grid',placeItems:'center'}}>

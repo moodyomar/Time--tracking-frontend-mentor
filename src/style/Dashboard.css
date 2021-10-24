@@ -3,7 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   color: #fff;
-  font-family: var(--thefont);
+  scroll-behavior: smooth;
 }
 .dashboard{
   width: 1100px;
@@ -63,6 +63,30 @@ grid-area: cardSelf;
       'cardSocial' 
       'cardSelf'; 
       gap: 25px;
+  }
+  .bottomBar{
+width: 100vw;
+position: fixed;
+z-index: 10;
+bottom: 5px;
+left: 0;
+display: flex;
+justify-content: center;
+  }
+  .wrapper{
+    padding: 0px 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90vw;
+    border-radius: 15px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.106);
+    box-shadow:  -1px -3px 10px 6px rgba(0,0,0,0.3);
+    backdrop-filter: blur(5px);
+  }
+  .icon path{
+
   }
 }
 
