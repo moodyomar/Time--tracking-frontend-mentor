@@ -1,10 +1,12 @@
 import React from 'react';
 import '../style/Card.css'
 
-const Card = ({i,ca:{title,timeframes:{weekly}}}) => { 
+const Card = ({i,ca:{title,timeframes},category}) => { 
 
 let cat = title.split(' ').join('')
-console.log(cat.toLowerCase());
+// console.log(cat.toLowerCase());
+
+console.log(timeframes[category]);
 
 
 return(
@@ -16,8 +18,8 @@ return(
     <div className="options">...</div>
   </div>
   <div className="col">
-    <div className="hours">{weekly.current}hrs</div>
-    <div className="date">Last Week - {weekly.previous}hrs</div>
+    <div className="hours">{timeframes[category].current}hrs</div>
+    <div className="date">Last Week - {timeframes[category].previous}hrs</div>
   </div>
 </div>
 </div>

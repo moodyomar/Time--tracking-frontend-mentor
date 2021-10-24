@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const ProfileCard = () => { 
+const ProfileCard = ({category,setCategory}) => { 
 
 return(
 
@@ -16,9 +16,12 @@ return(
   </div>
 </div>
 <div className="timePeriod">
-  <p>Daily</p>
-  <p>Weekly</p>
-  <p>Monthly</p>
+  <p className={category === 'daily' ? 'active' : ''}
+   onClick={() => setCategory('daily')}>Daily</p>
+  <p className={category === 'weekly' ? 'active' : ''}
+   onClick={() => setCategory('weekly')}>Weekly</p>
+  <p className={category === 'monthly' ? 'active' : ''}
+   onClick={() => setCategory('monthly')}>Monthly</p>
 </div>
 </div>
 

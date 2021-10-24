@@ -112,10 +112,10 @@ color: var(--Pale-Blue);
 .timePeriod p{
   margin-bottom: 20px;
 }
-.timePeriod p:nth-child(odd){
+.timePeriod p{
   color: var(--Pale-Blue);
 }
-.timePeriod p:hover{
+.timePeriod p:hover,.timePeriod p.active{
 color: #fff;
 cursor: pointer;
 }
