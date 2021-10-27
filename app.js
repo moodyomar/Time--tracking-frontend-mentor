@@ -1,6 +1,7 @@
 const express = require('express');
 const http = require('http');
 const path = require('path');
+const db = require('./db/config');
 
 const { routesInit } = require('./routes/routes_init');
 
