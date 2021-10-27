@@ -29,7 +29,7 @@ return(
 onChange={e => setEmail(e.target.value)} placeholder="Email" />
 <input type="password" 
 onChange={e => setPassword(e.target.value)} placeholder="Password" />
-<button className="loginBtn"
+<button className="loginBtn btn"
 onClick={loginRequest}>Login</button>
 <p htmlFor="">Forgot your password?</p>
 </div>
@@ -37,8 +37,8 @@ onClick={loginRequest}>Login</button>
 <div className="registerForm">
 <p htmlFor="">or connect with</p>
 <div className="loginButtons">
-<button className="fbLogin"><FaFacebookSquare/> Facebook</button>
-<button className="twLogin"><FaTwitter/> Twitter</button>
+<button className="fbLogin btn"><FaFacebookSquare/> Facebook</button>
+<button className="twLogin btn"><FaTwitter/> Twitter</button>
 </div>
 <p style={{marginBottom:'50px'}} htmlFor="">Don't have account yet? <span>Sign up</span></p>
 </div>
