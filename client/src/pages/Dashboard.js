@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import Card from './Card';
+import Card from '../comps/Card';
 import data from '../assests/data.json'
 import '../style/Dashboard.css'
 import '../style/Card.css'
-import ProfileCard from './ProfileCard';
-import BottomBar from './BottomBar';
-import AddActivity from './AddActivity';
+import ProfileCard from '../comps/ProfileCard';
+import BottomBar from '../comps/BottomBar';
+import AddActivity from '../comps/AddActivity';
+import { useSelector } from 'react-redux';
 
 const Dashboard = () => { 
 
   let [category,setCategory] = useState('daily');
-  let [activityForm,toggleActivityForm] = useState(false);
+  let {activityForm} = useSelector(state => state.activity)
+  
 
   useEffect(() => {
 console.log(category);
@@ -29,9 +31,9 @@ return(
 </div>
   {cards}
 { activityForm &&
-  <AddActivity toggle={toggleActivityForm} />
+  <AddActivity />
 }
-<BottomBar activity={activityForm} toggle={toggleActivityForm} />
+<BottomBar />
 </div>
 
 )
