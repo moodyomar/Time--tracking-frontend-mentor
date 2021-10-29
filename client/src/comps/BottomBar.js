@@ -21,8 +21,7 @@ return(
 onClick={() => dispatch(openActivityForm())} ><FcPlus size={60}/></div>
 
 
-<div className="icon" 
-onClick={''} ><FcSearch size={45}/></div>
+<div className="icon" ><FcSearch size={45}/></div>
 </div>
   </div>
 )
