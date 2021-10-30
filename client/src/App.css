@@ -37,6 +37,9 @@ font-family: var(--thefont);
 body{
   background: var(--Very-dark-blue);
 }
+a{
+  text-decoration: none;
+}
 .btn{
 margin-bottom: 20px;
 padding: 0 30px;

@@ -21,7 +21,7 @@ let newActivity = {
   time,
   date:d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()
 }
-axios.post('/activity',newActivity)
+axios.post('/activites',newActivity)
 .then(res => console.log(res))
 .catch(err => console.log(err))
 
@@ -56,8 +56,10 @@ dispatch(closeActivityForm())
           onChange={e =>
             setTime(e.target.value)}>
         </input>
-        <button className="addBtn btn"
+        <div><button className="addBtn btn"
           onClick={addActivity }>Add</button>
+        <button className="closeBtn btn"
+          onClick={() => dispatch(closeActivityForm())}>Close</button></div>
       </div>
     </div>
 

@@ -8,6 +8,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import Register from './pages/Register';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Router>
         <Switch>
         <Route exact path="/" component={Login} />
+        <Route exact path="/register" component={Register} />
         <Route path='/dashboard' component={Dashboard} />
         <Route path='/todos' component={Todos} />
         <Route path='/calendar' component={Calendar} />
