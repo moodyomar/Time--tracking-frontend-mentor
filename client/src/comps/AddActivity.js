@@ -8,17 +8,17 @@ import { useDispatch } from 'react-redux';
 
 const AddActivity = () => {
 
-  let [activityName, setName] = useState('')
-  let [activityCategory, setCategory] = useState('')
-  let [activityTime, setTime] = useState('')
+  let [activity, setName] = useState('')
+  let [category, setCategory] = useState('')
+  let [time, setTime] = useState('')
   let dispatch = useDispatch()
 
   const addActivity = () => {
 let d = new Date();
 let newActivity = {
-  activityName,
-  activityCategory,
-  activityTime,
+  category,
+  activity,
+  time,
   date:d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()
 }
 axios.post('/activity',newActivity)
