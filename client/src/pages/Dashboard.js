@@ -15,7 +15,6 @@ const Dashboard = () => {
   
 
   useEffect(() => {
-console.log(category);
 
 },[category])
 

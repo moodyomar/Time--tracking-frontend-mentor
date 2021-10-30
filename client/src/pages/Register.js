@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import { FaFacebookSquare,FaTwitter } from 'react-icons/fa';
 import {useHistory,Link} from "react-router-dom";
 import '../style/Dashboard.css'
 import '../style/Login.css'
 
 
 
-const Login = () => { 
+const Register = () => { 
 
 let [email,setEmail] = useState('')
+let [name,setName] = useState('')
 let [password,setPassword] = useState('')
+let [password2,setPassword2] = useState('')
 
 const history = useHistory()
 const loginRequest = () => {
@@ -24,23 +25,23 @@ return(
 <div className='Login'>
   <div className="vectorBg"></div>
 <div className="loginForm">
-<h2>Login</h2>
+<h2>Sign Up</h2>
+<input type="text" 
+onChange={e => setName(e.target.value)} 
+placeholder="Your Name" />
 <input type="text" 
 onChange={e => setEmail(e.target.value)} placeholder="Email" />
 <input type="password" 
 onChange={e => setPassword(e.target.value)} placeholder="Password" />
+<input type="password" 
+onChange={e => setPassword2(e.target.value)} placeholder="Repeat Password" />
 <button className="loginBtn btn"
-onClick={loginRequest}>Login</button>
-<p htmlFor="">Forgot your password?</p>
+onClick={loginRequest}>Sign Up</button>
 </div>
 
 <div className="registerForm">
-<p htmlFor="">or connect with</p>
-<div className="loginButtons">
-<button className="fbLogin btn"><FaFacebookSquare/> Facebook</button>
-<button className="twLogin btn"><FaTwitter/> Twitter</button>
-</div>
-<p style={{marginBottom:'50px'}} htmlFor="">Don't have account yet? <Link to="/register"><span>Sign up</span></Link></p>
+
+<p style={{marginBottom:'50px'}} htmlFor="">Already a user? <Link to="/login"><span>Login</span></Link></p>
 </div>
 
 </div>
@@ -48,4 +49,4 @@ onClick={loginRequest}>Login</button>
 )
 }
 
-export default Login
+export default Register

@@ -1,5 +1,5 @@
 const express = require('express');
-const { validActivity, ActivityModel } = require('../models/ActivityModel');
+const { validActivity,Activity} = require('../models/Activity');
 const router = express.Router();
 
 router.get('/', (req,res) => {
@@ -11,12 +11,14 @@ router.get('/', (req,res) => {
 // @access  Private
 router.post('/', async(req,res) => {
 let validBody = validActivity(req.body);
+
 if(validBody.error){
 return res.status(500).json({msg:validBody.error.details});
 }
 try{
 
-let activity =  new ActivityModel(req.body);
+let activity =  new Activity(req.body);
+
 await activity.save()
 res.status(201).json(activity)
 } catch(err) {

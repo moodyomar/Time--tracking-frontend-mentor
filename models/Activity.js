@@ -5,16 +5,17 @@ const activitySchema = new mongoose.Schema({
   category:String,
   activity:String,
   time:String,
-  // date:Date.now()
+  date:String
 })
 
-exports.ActivityModel = mongoose.model("activites",activitySchema)
+exports.Activity = mongoose.model("activites",activitySchema)
 
 exports.validActivity = (_body) => {
 let activity = Joi.object({
   category:Joi.string().required(),
   activity:Joi.string().min(6),
-  time:Joi.string().required()
+  time:Joi.string().required(),
+  date:Joi.string().required(),
 })
 return activity.validate(_body);
 }
