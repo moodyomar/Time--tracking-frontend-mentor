@@ -7,11 +7,12 @@ import ProfileCard from '../comps/ProfileCard';
 import BottomBar from '../comps/BottomBar';
 import AddActivity from '../comps/AddActivity';
 import { useSelector } from 'react-redux';
+import { Redirect } from 'react-router';
 
 const Dashboard = () => { 
 
   let [category,setCategory] = useState('daily');
-  let {activityForm} = useSelector(state => state.activity)
+  let {activity:{activityForm},auth:{isAuthenticated}} = useSelector(state => state)
   
 
   useEffect(() => {
@@ -21,6 +22,9 @@ const Dashboard = () => {
 const cards = data.map((ca,i) => (
   <Card key={i} ca={ca} category={category} />
 ))
+
+if(!isAuthenticated) return <Redirect to="/login"/>
+
 
 return(
 

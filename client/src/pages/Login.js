@@ -1,38 +1,47 @@
 import React, { useState } from 'react';
 import { FaFacebookSquare,FaTwitter } from 'react-icons/fa';
-import {useHistory,Link} from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import {useHistory,Link,Redirect} from "react-router-dom";
+import { login } from '../actions/auth';
 import '../style/Dashboard.css'
 import '../style/Login.css'
 
 
 
 const Login = () => { 
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
 
-let [email,setEmail] = useState('')
-let [password,setPassword] = useState('')
-
-const history = useHistory()
-const loginRequest = () => {
-  if(email !== '' && password !== ''){
-    return history.push('/dashboard')
+  const [formData,setFormData] = useState({
+    email:'',
+    password:'',
+  });
+  const {email,password} = formData;
+  
+  const onChange = e => setFormData({...formData, [e.target.name]: e.target.value})
+  
+  const onSubmit = async(e) => {
+    console.log('in on submit ',formData);
+    e.preventDefault();
+    dispatch(login(email,password));
   }
-  alert('Please enter your details inorder to login')
-}
+
+  if(isAuthenticated) return <Redirect to="/dashboard"/>
 
 return(
 
 <div className='Login'>
   <div className="vectorBg"></div>
-<div className="loginForm">
+<form className="loginForm" onSubmit={onSubmit}>
 <h2>Login</h2>
-<input type="text" 
-onChange={e => setEmail(e.target.value)} placeholder="Email" />
-<input type="password" 
-onChange={e => setPassword(e.target.value)} placeholder="Password" />
-<button className="loginBtn btn"
-onClick={loginRequest}>Login</button>
+<input type="text" name="email"
+onChange={e => onChange(e)} placeholder="Email" />
+<input type="password" name="password"
+onChange={e => onChange(e)} placeholder="Password" />
+<button className="loginBtn btn">Login</button>
 <p htmlFor="">Forgot your password?</p>
-</div>
+</form>
 
 <div className="registerForm">
 <p htmlFor="">or connect with</p>

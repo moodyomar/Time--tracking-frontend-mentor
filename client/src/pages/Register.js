@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import {useHistory,Link} from "react-router-dom";
+import {Link,Redirect} from "react-router-dom";
+import {useDispatch, useSelector} from 'react-redux';
+import { registerUser } from '../actions/auth';
+import { toast } from "react-toastify";
 import '../style/Dashboard.css'
 import '../style/Login.css'
 
@@ -7,37 +10,54 @@ import '../style/Login.css'
 
 const Register = () => { 
 
-let [email,setEmail] = useState('')
-let [name,setName] = useState('')
-let [password,setPassword] = useState('')
-let [password2,setPassword2] = useState('')
+let [formData,setFormData] = useState({
+  name:'',
+  email:'',
+  password:'',
+  repeatPassword:''
+});
+const {name,email,password,repeatPassword} = formData;
 
-const history = useHistory()
-const loginRequest = () => {
-  if(email !== '' && password !== ''){
-    return history.push('/dashboard')
+const onChange = e => setFormData({...formData, [e.target.name]: e.target.value})
+
+const dispatch = useDispatch();
+const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+
+
+const onSubmit = async(e) => {
+  console.log('in on submit');
+  
+  e.preventDefault();
+  if(password !== repeatPassword){
+    toast.warning("Password doesn't match");
+  }else{
+    console.log('here 2');
+    console.log(formData);
+    dispatch(registerUser({name,email,password,repeatPassword}))
   }
-  alert('Please enter your details inorder to login')
 }
+
+if(isAuthenticated) return <Redirect to="/dashboard"/>
+
 
 return(
 
 <div className='Login'>
   <div className="vectorBg"></div>
-<div className="loginForm">
+<form className="loginForm" onSubmit={e => onSubmit(e)}>
 <h2>Sign Up</h2>
 <input type="text" 
-onChange={e => setName(e.target.value)} 
-placeholder="Your Name" />
+onChange={e => onChange(e)} 
+placeholder="Your Name" name="name" />
 <input type="text" 
-onChange={e => setEmail(e.target.value)} placeholder="Email" />
+onChange={e => onChange(e)} placeholder="Email" name="email" />
 <input type="password" 
-onChange={e => setPassword(e.target.value)} placeholder="Password" />
-<input type="password" 
-onChange={e => setPassword2(e.target.value)} placeholder="Repeat Password" />
-<button className="loginBtn btn"
-onClick={loginRequest}>Sign Up</button>
-</div>
+onChange={e => onChange(e)} placeholder="Password" name="password" />
+<input type="password" name="repeatPassword"
+onChange={e => onChange(e)} placeholder="Repeat Password" />
+<button className="loginBtn btn">Sign Up</button>
+
+</form>
 
 <div className="registerForm">
 

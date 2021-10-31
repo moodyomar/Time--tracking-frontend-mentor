@@ -25,6 +25,9 @@
   --thefont: 'Rubik', sans-serif;
 }
 
+.Toastify__toast {
+  background: #181717;
+}
 .App{
 width: 100vw;
 min-height: 100vh;
