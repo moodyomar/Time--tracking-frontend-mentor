@@ -19,7 +19,7 @@ position: fixed;
 z-index: 10;
 bottom: 5px;
 left: 0;
-display: flex;
+display: flex !important;
 justify-content: center;
   }
   .wrapper{

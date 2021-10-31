@@ -27,6 +27,7 @@ export const auth = (state = initialState, { type, payload }) => {
 
     case 'REGISTER_FAIL':
     case 'LOGIN_FAIL':
+    case 'AUTH_ERROR':
       localStorage.removeItem('token');
       return {
         ...state,

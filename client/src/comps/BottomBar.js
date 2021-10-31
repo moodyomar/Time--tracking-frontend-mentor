@@ -16,7 +16,7 @@ return(
 <Link to="/calendar"><div className="icon"><FcPlanner size={45}/></div></Link>
 <Link to="/todos"><div className="icon"><FcInspection size={60}/></div></Link>
 
-<Link to="/dashboard"><div className="icon"><FcHome size={75}/></div></Link>
+<Link to="/"><div className="icon"><FcHome size={75}/></div></Link>
 <div className="icon" 
 onClick={() => dispatch(openActivityForm())} ><FcPlus size={60}/></div>
 

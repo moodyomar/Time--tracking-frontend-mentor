@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { toast } from "react-toastify";
+import setAuthToken from '../utils/setAuthToken';
 
 export const registerUser = ({name,email,password,repeatPassword}) => async dispatch => {
 
@@ -9,7 +10,7 @@ export const registerUser = ({name,email,password,repeatPassword}) => async disp
       type:'REGISTER_SUCCESS',
       payload:res.data
     })
-    // dispatch(loadUser()); 
+    dispatch(loadUser()); 
     toast.success(`Hey ${name.split(' ')[0]} 👋 , Welcome to TimeTracker!`)
   } catch (err) {
     const errors = err.response.data
@@ -31,7 +32,7 @@ export const login = (email,password) => async dispatch => {
       type:'LOGIN_SUCCESS',
       payload:res.data
     })
-    // dispatch(loadUser());
+    await dispatch(loadUser());
     toast.success("Logged in successfully")
   } catch (err) {
     const errors = err.response.data
@@ -42,4 +43,22 @@ export const login = (email,password) => async dispatch => {
       type:'LOGIN_FAIL'
     })
   }
+}
+
+// Load User
+export const loadUser = () => async dispatch => {
+  if(localStorage.token){
+    setAuthToken(localStorage.token);
+  }
+try {
+  const res = await axios.get(`users`);
+  dispatch({
+    type:'USER_LOADED',
+    payload:res.data
+  })
+} catch (error) {
+  dispatch({
+    type:'AUTH_ERROR',
+  })
+}
 }

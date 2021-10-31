@@ -6,8 +6,9 @@ exports.auth = (req,res,next) => {
   if(!token) return res.status(401).json({msg:'no token, authorization denied'});
   try{
       const decoded = jwt.verify(token,config.jwtSecret);
-      req.tokenData = decoded;
+      req.user = decoded;
       // req.user = decoded.user;
+      
       next()
   } catch(err) {
       console.log(err);

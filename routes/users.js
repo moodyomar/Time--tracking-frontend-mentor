@@ -5,8 +5,17 @@ const { auth } = require('../middlewares/auth');
 const bcrypt = require("bcrypt");
 const {pick} = require("lodash")
 
-router.get('/', (req,res) => {
-  res.json({users:"Up and runnning"})
+router.get("/", auth, async(req,res) => {
+  try{
+    console.log(req)
+    
+      const user = await User.findById(req.user._id).select('-password');
+      res.json(user);
+  } catch(err) {
+      console.error(err);
+      res.status(500).send('Server Error');
+  }
+  
 })
 
 router.get("/authUser", auth , (req,res) => {
