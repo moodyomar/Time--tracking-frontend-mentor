@@ -13,6 +13,7 @@ return(
 
 <div className=''>
 <h1>Todos</h1>
+<div className="plus">plus</div>
 { activityForm &&
   <AddActivity />
 }

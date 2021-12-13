@@ -6,7 +6,7 @@ import '../style/Activities.css'
 import { closeActivityForm } from '../actions/activity';
 import { useDispatch } from 'react-redux';
 
-const AddActivity = () => {
+const AddActivity = ({title2,title3,placeholder}) => {
 
   let [activity, setName] = useState('')
   let [category, setCategory] = useState('')
@@ -46,11 +46,11 @@ dispatch(closeActivityForm())
           <option value="Social">Social</option>
           <option value="Self Care">Self Care</option>
         </select>
-        <p>Activity : </p>
-        <input type="text" placeholder="Night shift..."
+        <p>{title2} : </p>
+        <input type="text" placeholder={placeholder}
           onChange={e =>
             setName(e.target.value)}/>
-        <p>Time Spent : </p>
+        <p>{title3} : </p>
         <input type="time" id="appt" name="appt"
           min="09:00" max="18:00" required
           onChange={e =>

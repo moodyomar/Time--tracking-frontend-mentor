@@ -27,7 +27,7 @@ const Login = () => {
     dispatch(login(email,password));
   }
 
-  if(isAuthenticated) return <Redirect to="/dashboard"/>
+  if(isAuthenticated) return <Redirect to="/"/>
 
 return(
 

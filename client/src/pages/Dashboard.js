@@ -12,7 +12,7 @@ import { Redirect } from 'react-router';
 const Dashboard = () => { 
 
   let [category,setCategory] = useState('daily');
-  let {activity:{activityForm},auth:{isAuthenticated}} = useSelector(state => state)
+  let {activity:{activityForm,todoForm},auth:{isAuthenticated}} = useSelector(state => state)
   
 
   useEffect(() => {
@@ -34,8 +34,12 @@ return(
 </div>
   {cards}
 { activityForm &&
-  <AddActivity />
+  <AddActivity 
+  title2='Activity' title3={'Time Spent'}
+  placeholder='Night Shift..' />
 }
+{ todoForm && <AddActivity 
+title2={'Todo'} title3={'Due time'} placeholder='Go to the gym...' /> }
 <BottomBar />
 </div>
 

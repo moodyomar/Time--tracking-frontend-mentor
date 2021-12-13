@@ -1,6 +1,7 @@
 
 const initalState = {
-  activityForm: false
+  activityForm: false,
+  todoForm: false,
 }
 
 export const activity = (state = initalState, { type, payload }) => {
@@ -13,6 +14,14 @@ export const activity = (state = initalState, { type, payload }) => {
     case "CLOSE_ACTIVITY_FORM":
       console.log(initalState);
       return { ...state, activityForm: false }
+
+    case "OPEN_TODO_FORM":
+      console.log(initalState);
+      return { ...state, todoForm: true }
+
+    case "CLOSE_TODO_FORM":
+      console.log(initalState);
+      return { ...state, todoForm: false }
 
     default:
       return state;

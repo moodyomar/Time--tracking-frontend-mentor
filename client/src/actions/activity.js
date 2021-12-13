@@ -5,3 +5,11 @@ export const openActivityForm = () => {
 export const closeActivityForm = () => {
   return {type:"CLOSE_ACTIVITY_FORM"}
 }
+
+export const openTodoForm = () => {
+  return {type:"OPEN_TODO_FORM"}
+}
+
+export const closeTodoForm = () => {
+  return {type:"CLOSE_TODO_FORM"}
+}
